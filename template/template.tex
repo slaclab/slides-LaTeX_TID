@@ -1,0 +1,210 @@
+% Import palette
+\input{./template/palette.tex}
+
+% Default line spacing
+\linespread{1.5}
+
+% Apply colors
+\setbeamercolor{title}{fg=cardinal}
+\setbeamercolor{frametitle}{fg=cardinal}
+\setbeamercolor{section in toc}{fg=cardinal}
+\setbeamercolor{section title}{fg=cardinal}
+\setbeamercolor{subtitle}{fg=cardinal}
+\setbeamercolor{bibliography item}{fg=cardinal_dark}
+\setbeamercolor{bibliography entry author}{fg=cardinal_dark}
+\setbeamercolor{bibliography entry title}{fg=cardinal_light}
+\setbeamercolor{bibliography entry location}{fg=cardinal}
+\setbeamercolor{bibliography entry note}{fg=paloalto}
+
+% Itemize and enumerate
+\newcommand{\cardinalbullet}{\raisebox{0.5pt}{\color{cardinal}\footnotesize\textbullet}}
+\setbeamertemplate{itemize item}{\cardinalbullet}
+\setbeamertemplate{itemize subitem}{\cardinalbullet}
+\setbeamertemplate{itemize subsubitem}{\cardinalbullet}
+\setbeamertemplate{enumerate item}{\cardinalbullet}
+\setbeamertemplate{enumerate subitem}{\cardinalbullet}
+\setbeamertemplate{enumerate subsubitem}{\cardinalbullet}
+
+
+% Subtitle macro
+\newcommand{\subheading}[1]{{\color{cardinal_light} \Large #1}}
+
+% Columns environment to respect margins
+\newenvironment{groupcolumns}[1][]{%
+    \begin{columns}[onlytextwidth,T,#1]% 'onlytextwidth': only use available space, respect margins; 'T': align columns tops to top
+}{%
+    \end{columns}%
+}
+
+% Footer; on frame, use 'plain' to hide frame number and 'noframenumbering' to skip frame_counter++
+\beamertemplatenavigationsymbolsempty % hide footer navigation symbols
+
+\makeatletter
+\setbeamertemplate{footline}{%
+        \hspace*{\beamer@leftmargin}% pad to keep left margin
+        \includegraphics[height=8pt]{./template/images/SLAC_TID.pdf}%
+        \hspace{2pt}%
+        \vrule width 0.3pt%
+        \hspace{2pt}%
+        \includegraphics[height=8pt]{./template/images/IC.pdf}%
+        \hspace{40pt}%
+        % Some Conference | Month DD - Month DD | Some Place
+        \hfill%
+        \usebeamercolor[fg]{page number in head/foot}%
+        \usebeamerfont{page number in head/foot}%
+        \scriptsize\insertframenumber%
+        \hspace*{\beamer@rightmargin}% pad to keep right margin
+        \vspace{6pt}% controls vertical spacing with frame floor
+}
+\makeatother
+
+% Default header
+\BeforeBeginEnvironment{frame}{%
+    % Header
+    \setbeamertemplate{frametitle}{%
+        \vspace{3pt}% control spacing with frame ceiling
+        \usebeamerfont{frametitle}\huge\insertframetitle%
+        \vphantom{g}% to avoid fluctuations per frame
+        \vspace{3pt}% spacing between title text and horizontal line
+        \hrule% 
+        \vspace{-3pt}% adjust spacing after line
+    }
+    \setbeamertemplate{background}{}%
+    % \defaultfooter
+}
+
+
+% Titlepage slide template
+\newcommand{\blackstrip}[1]{\par\noindent\hspace{-1\textwidth}\textcolor{black}{\rule{3\textwidth}{#1}}\par\nobreak} % black strip on which to overlap logos
+\titlegraphic{\includesvg[width=1.1\textwidth]{./template/images/titlepage_inset.svg}} % set titlegraphic (image to show on titlepage)
+\makeatletter
+\define@key{beamerframe}{Titlepage}[true]{%
+    \setbeamertemplate{background}{%
+        \texttransparent{1}{\includegraphics[width=1.2\linewidth]{./template/images/titlepage_background.pdf}}% Background/main image
+    }
+    \makeatletter
+    \setbeamertemplate{title page}[default][left,colsep=-4bp] % align title page left
+    \makeatother
+    \setbeamerfont{title}{size=\@setfontsize\Huge{30}{20}}
+    \setbeamercolor{title}{fg=white}
+    \setbeamerfont{subtitle}{size=\@setfontsize\Huge{16}{12}}
+    \setbeamercolor{subtitle}{fg=white}
+    \setbeamercolor{author}{fg=white}
+    \setbeamercolor{date}{fg=white}
+    \setbeamercolor{institute}{fg=white}
+    \setbeamertemplate{title page}{
+        \vfill
+        \begingroup
+        \begin{groupcolumns}
+            \hfill
+            \begin{column}{0.65\textwidth}
+                \usebeamertemplate{date}
+                \usebeamertemplate*{title}
+                \usebeamertemplate*{subtitle}
+            \end{column}
+            \begin{column}{0.35\textwidth}
+                \usebeamertemplate*{titlegraphic}
+            \end{column}
+            \hfill
+        \end{groupcolumns}
+        \vspace{2pt}
+        {\color{white}\hrule height 1pt}
+        \usebeamertemplate{author}
+        % \usebeamertemplate{institute}
+        \vfill
+        % Institutions at the bottom bar
+        \vspace{10pt}
+        \blackstrip{30pt}
+        \vspace{-27pt}
+        \includesvg[height=12pt]{./template/images/SLAC_TID_white.svg}
+        {\color{white}\vrule width 0.1pt}
+        \includesvg[height=12pt]{./template/images/TID_ID_IC.svg}
+        \hfill
+        \includesvg[height=12pt]{./template/images/Stanford_University.svg}
+        {\color{white}\vrule width 0.1pt}
+        \includesvg[height=12pt]{./template/images/DOE.svg}
+        \vspace{-4pt}
+        \endgroup
+    }
+}
+\makeatother
+
+
+% SloganTitleUnderline slide template
+\makeatletter
+\define@key{beamerframe}{SloganTitleUnderline}[true]{%
+    \setbeamertemplate{frametitle}{%
+        % \vskip-11.5pt % \vspace{-8.5pt}
+        \vskip-11.5pt % \vspace{-8.5pt}
+        \makebox[\textwidth]{\includegraphics[width=\paperwidth]{./template/images/slogan.pdf}}
+        \vskip-5pt%\vskip5.5pt 
+        \usebeamerfont{frametitle}\huge\insertframetitle%
+        \vphantom{g}% to avoid fluctuations per frame
+        \vspace{3pt}% spacing between title text and horizontal line
+        \hrule% 
+        \vspace{-3pt}% adjust spacing after line
+    }
+    % \defaultfooter
+}
+\makeatother
+
+
+% FloatingTitle (no underline) slide template
+\makeatletter
+\define@key{beamerframe}{FloatingTitle}[true]{%
+    \setbeamertemplate{frametitle}{%
+        \vskip-11.5pt % \vspace{-8.5pt}
+        \makebox[\textwidth]{\includegraphics[width=\paperwidth]{./template/images/slogan.pdf}}
+        \vskip5.5pt
+        \usebeamerfont{frametitle}\huge\insertframetitle%
+        \vphantom{g}% to avoid fluctuations per frame
+    }
+    % \defaultfooter
+}
+\makeatother
+
+
+% SectionTitlepage slide template
+\makeatletter
+\define@key{beamerframe}{SectionTitlepage}[true]{%
+    \setbeamerfont{framesubtitle}{size=\@setfontsize\LARGE{12}{10}}
+    \setbeamercolor{framesubtitle}{fg=stanford_black}%
+    \setbeamertemplate{frametitle}{%
+        \vskip-11.5pt % \vspace{-8.5pt}
+        \makebox[\textwidth]{\includegraphics[width=\paperwidth]{./template/images/slogan.pdf}}
+        \vskip50pt
+        {\color{stanford_black}\fontsize{35}{50}\selectfont\insertsectionnumber}
+        \vskip6pt
+        {\color{cardinal}\hrule height 0.5pt}
+        \vskip15pt
+        \usebeamerfont{frametitle}\Huge\insertframetitle%
+        \vskip10pt
+        \usebeamercolor[fg]{framesubtitle}\usebeamerfont{framesubtitle}\insertframesubtitle%
+        \vphantom{g}% to avoid fluctuations per frame
+    }
+    % \defaultfooter
+}
+\makeatother
+
+
+% TableOfContents (TOC) style
+\setbeamertemplate{section in toc}[sections numbered]
+\setbeamerfont{section number projected}{size=\LARGE}
+\setbeamercolor{section number projected}{bg=white,fg=black}
+
+\setbeamertemplate{section in toc}{%
+    \leavevmode\leftskip=4.75ex%1.75ex
+  \llap{%
+    \usebeamerfont*{section number projected}%
+    \usebeamercolor[bg]{section number projected}%
+    \vrule width2.25ex height1.85ex depth.4ex%
+    \hskip-2.25ex%
+    \hbox to2.25ex{\hfil\color{fg}\inserttocsectionnumber.\hfil}}%
+\kern0.75ex\inserttocsection\par}
+
+\makeatletter
+\patchcmd{\beamer@sectionintoc}{\vskip1.5em}{\vskip0.5em}{}{}
+\patchcmd{\beamer@sectionintoc}{\vfill}{\vskip-0.2em}{}{} % reduce padding
+\makeatother
+
+

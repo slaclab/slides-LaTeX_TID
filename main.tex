@@ -1,0 +1,382 @@
+\documentclass[aspectratio=169, t, 9pt]{beamer} % 16:9 ratio, t: top alignment, 9pt: default text size
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Titlepage information
+\title[Beamer] %optional
+{Lorem ipsum dolor sit amet}
+
+\subtitle{consectetur adipiscing elit}
+
+\author[Arthur, Doe] % (optional, for multiple authors)
+{A.~Alpha\inst{1} \and B.~Bravo\inst{2} \\ On behalf of Institute X, Institute Y, Institute Z}
+
+\institute[SLAC] % (optional)
+{
+  \inst{1}%
+  Faculty of Foo\\
+  Bar University
+  \and
+  \inst{2}%
+  Faculty of Baz\\
+  Quz University
+}
+
+\date{Some Conference - \today}% (optional)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage[default]{lato} % set Lato as the default font
+\usepackage{svg} % includesvg{foo.svg}
+\usepackage{tikz} % graphics
+\usepackage{graphicx,transparent} % graphics
+\usepackage[natbib=true,backend=bibtex,sorting=none]{biblatex}
+\bibliography{./bibliography.bib}
+
+
+% Import template
+\input{./template/template.tex}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{document}
+
+
+\begin{frame}[Titlepage, plain, noframenumbering]
+\titlepage
+\end{frame}
+
+
+\begin{frame}[SloganTitleUnderline]{TOC}
+    \LARGE \tableofcontents%[section]
+\end{frame}
+
+
+\begin{frame}[FloatingTitle]{Agenda}
+\begin{groupcolumns}
+    \hspace{0.25\textwidth}
+    \begin{column}{0.35\textwidth}
+        \subheading{Section title goes here}
+        
+        Supporting text here
+
+        \vspace{20pt}
+        \subheading{Section title goes here}
+        
+        Supporting text here
+
+        \vspace{20pt}
+        \subheading{Section title goes here}
+        
+        Supporting text here
+    \end{column}
+    \begin{column}{0.35\textwidth}
+        \subheading{Section title goes here}
+        
+        Supporting text here
+
+        \vspace{20pt}
+        \subheading{Section title goes here}
+        
+        Supporting text here
+
+        \vspace{20pt}
+        \subheading{Section title goes here}
+        
+        Supporting text here
+    \end{column}
+\end{groupcolumns}
+\end{frame}
+
+
+\begin{frame}[FloatingTitle]{Agenda}
+\begin{groupcolumns}
+    \hfill
+    \begin{column}{0.4\textwidth}
+        \subheading{HH:MM - HH:MM}
+    \end{column}
+    \begin{column}{0.4\textwidth}
+        \textbf{Topic or session title goes here}
+
+        Speaker Name, Speaker Title
+    \end{column}
+    \hfill
+\end{groupcolumns}
+\vfill
+\begin{groupcolumns}
+    \hfill
+    \begin{column}{0.4\textwidth}
+        \subheading{HH:MM - HH:MM}
+    \end{column}
+    \begin{column}{0.4\textwidth}
+        \textbf{Topic or session title goes here}
+
+        Speaker Name, Speaker Title
+    \end{column}
+    \hfill
+\end{groupcolumns}
+\vfill
+\begin{groupcolumns}
+    \hfill
+    \begin{column}{0.4\textwidth}
+        \subheading{HH:MM - HH:MM}
+    \end{column}
+    \begin{column}{0.4\textwidth}
+        \textbf{Topic or session title goes here}
+
+        Speaker Name, Speaker Title
+    \end{column}
+    \hfill
+\end{groupcolumns}
+\vfill
+\begin{groupcolumns}
+    \hfill
+    \begin{column}{0.4\textwidth}
+        \subheading{HH:MM - HH:MM}
+    \end{column}
+    \begin{column}{0.4\textwidth}
+        \textbf{Topic or session title goes here}
+
+        Speaker Name, Speaker Title
+    \end{column}
+    \hfill
+\end{groupcolumns}
+\end{frame}
+
+
+\begin{frame}[FloatingTitle]{Agenda}
+\begin{groupcolumns}
+    \hfill
+    \begin{column}{0.3\textwidth}
+        \subheading{HH:MM - HH:MM}
+
+        \vspace{8pt}
+        \hrule % width 0.3pt%
+        \vspace{8pt}
+
+        \textbf{Topic or session name goes here}
+        \vspace{4pt}
+
+        Speaker Name, Speaker Title
+    \end{column}
+    \begin{column}{0.3\textwidth}
+        \subheading{HH:MM - HH:MM}
+
+        \vspace{8pt}
+        \hrule % width 0.3pt%
+        \vspace{8pt}
+
+        \textbf{Topic or session name goes here}
+        \vspace{4pt}
+
+        Speaker Name, Speaker Title
+    \end{column}
+    \begin{column}{0.3\textwidth}
+        \subheading{HH:MM - HH:MM}
+
+        \vspace{8pt}
+        \hrule % width 0.3pt%
+        \vspace{8pt}
+
+        \textbf{Topic or session name goes here}
+        \vspace{4pt}
+
+        Speaker Name, Speaker Title
+    \end{column}
+    \hfill
+\end{groupcolumns}
+\vfill
+\begin{groupcolumns}
+    \hfill
+    \begin{column}{0.3\textwidth}
+        \subheading{HH:MM - HH:MM}
+
+        \vspace{8pt}
+        \hrule % width 0.3pt%
+        \vspace{8pt}
+
+        \textbf{Topic or session name goes here}
+        \vspace{4pt}
+
+        Speaker Name, Speaker Title
+    \end{column}
+    \begin{column}{0.3\textwidth}
+        \subheading{HH:MM - HH:MM}
+
+        \vspace{8pt}
+        \hrule % width 0.3pt%
+        \vspace{8pt}
+
+        \textbf{Topic or session name goes here}
+        \vspace{4pt}
+
+        Speaker Name, Speaker Title
+    \end{column}
+    \begin{column}{0.3\textwidth}
+        \subheading{HH:MM - HH:MM}
+
+        \vspace{8pt}
+        \hrule % width 0.3pt%
+        \vspace{8pt}
+
+        \textbf{Topic or session name goes here}
+        \vspace{4pt}
+
+        Speaker Name, Speaker Title
+    \end{column}
+    \hfill
+\end{groupcolumns}
+\end{frame}
+
+
+\begin{frame}{Sample one-column text slide - Title}
+\subheading{Subtitle goes here}
+
+Click to edit Master text styles
+\begin{enumerate}
+    \item Second level
+    \begin{enumerate}
+        \item Third level
+        \begin{enumerate}
+            \item Fourth level
+        \end{enumerate}
+    \end{enumerate}
+\end{enumerate}
+\end{frame}
+
+
+\begin{frame}{Sample two-column text slide - Title}
+\begin{groupcolumns}
+    \begin{column}{0.5\textwidth}
+        \subheading{Subtitle goes here}
+        \begin{enumerate}
+            \item Second level
+            \begin{enumerate}
+                \item Third level
+                \begin{enumerate}
+                    \item Fourth level
+                \end{enumerate}
+            \end{enumerate}
+        \end{enumerate}
+    \end{column}
+    \begin{column}{0.5\textwidth}
+        \subheading{Subtitle goes here}
+        \begin{enumerate}
+            \item Second level
+            \begin{enumerate}
+                \item Third level
+                \begin{enumerate}
+                    \item Fourth level
+                \end{enumerate}
+            \end{enumerate}
+        \end{enumerate}
+    \end{column}
+\end{groupcolumns}
+\end{frame}
+
+
+\begin{frame}{Sample photo slide with one image - Title}
+\begin{groupcolumns}
+    \begin{column}{0.55\textwidth}
+        \includegraphics{./template/images/IC.pdf}%
+    \end{column}
+    \hfill
+    \vrule width 0.3pt%
+    \hfill
+    \begin{column}{0.3\textwidth}
+        \subheading{Subtitle goes here}
+
+        Supporting text goes here. Supporting text goes here. Supporting text goes here. Supporting text goes here. Supporting text goes here.
+    \end{column}
+\end{groupcolumns}
+\end{frame}
+
+
+\begin{frame}{Sample photo slide with two images - Title}
+\begin{groupcolumns}
+    \begin{column}{0.475\textwidth}
+        \includegraphics[width=\textwidth]{./template/images/IC.pdf}%
+
+        \subheading{Subtitle goes here}
+
+        Supporting text goes here. Supporting text goes here. Supporting text goes here. Supporting text goes here. Supporting text goes here.
+    \end{column}
+    \vspace{0.05\textwidth}
+    \begin{column}{0.475\textwidth}
+        \includegraphics[width=\textwidth]{./template/images/IC.pdf}%
+
+        \subheading{Subtitle goes here}
+
+        Supporting text goes here. Supporting text goes here. Supporting text goes here. Supporting text goes here. Supporting text goes here.
+    \end{column}
+\end{groupcolumns}
+\end{frame}
+
+
+\begin{frame}{Sample photo slide with three images - Title}
+\begin{groupcolumns}
+    \begin{column}{0.3\textwidth}
+        \includegraphics[width=\textwidth]{./template/images/IC.pdf}%
+
+        \subheading{Subtitle goes here}
+
+        Supporting text goes here. Supporting text goes here. Supporting text goes here.
+    \end{column}
+    \vspace{0.05\textwidth}
+    \begin{column}{0.3\textwidth}
+        \includegraphics[width=\textwidth]{./template/images/IC.pdf}%
+
+        \subheading{Subtitle goes here}
+
+        Supporting text goes here. Supporting text goes here. Supporting text goes here.
+    \end{column}
+    \vspace{0.05\textwidth}
+    \begin{column}{0.3\textwidth}
+        \includegraphics[width=\textwidth]{./template/images/IC.pdf}%
+
+        \subheading{Subtitle goes here}
+
+        Supporting text goes here. Supporting text goes here. Supporting text goes here.
+    \end{column}
+\end{groupcolumns}
+\end{frame}
+
+
+\begin{frame}{Title goes here}
+\begin{groupcolumns}
+    \begin{column}{0.4\textwidth}
+        \subheading{Subtitle goes here}
+
+        Supporting text describing the graphic or photo goes here. Supporting text describing the graphic or photo goes here. Supporting text describing the graphic or photo goes here. Supporting text describing the graphic or photo goes here.
+    \end{column}
+    \vspace{0.1\textwidth}
+    \begin{column}{0.5\textwidth}
+        \includegraphics[width=\textwidth]{./template/images/IC.pdf}%
+    \end{column}
+\end{groupcolumns}
+\end{frame}
+
+
+\section{A section}
+\begin{frame}[SectionTitlepage]{A section}
+    \framesubtitle{This is a subtitle \\ \vspace{6pt} And another one}
+\end{frame}
+
+
+\section{foo}
+\begin{frame}{Sample frame title}
+Some citation \cite{texbook}. 
+
+Some other citation \cite{Shannon1948}.
+\end{frame}
+
+
+\section{bar}
+\begin{frame}[allowframebreaks]{References}
+    \printbibliography
+\end{frame}
+
+
+\end{document}
